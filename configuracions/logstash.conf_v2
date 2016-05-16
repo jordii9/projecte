@@ -1,5 +1,7 @@
 input {
-  file {
+# path => [ "/var/log/*.log", "/var/log/messages", "/var/log/syslog" ]
+# }  
+file {
    path => "/var/tmp/logstash-tutorial-dataset3"
    path => "/var/log/httpd/log_access" 
    path => "/var/log/messages"

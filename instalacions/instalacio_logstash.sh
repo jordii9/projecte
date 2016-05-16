@@ -17,9 +17,20 @@ EOF
 
 dnf install -y  logstash
 
+
+# sol·lucionar possibles problemes de permisos.
+
+chown -R logstash:logstash /etc/logstash.d/
+chown -R logstash:logstash /var/log/logstash/
+chown -R logstash:logstash /opt/logstash/
+
+# enjegar el servei
+
 systemctl start logstash
 systemctl enable logstash
 systemctl status logstash
+
+# crear les ordres executables al dir bin
 
 ln -s /opt/logstash/bin/logstash-plugin /bin/logstash-plugin
 ln -s /opt/logstash/bin/plugin /bin/plugin_logstash
