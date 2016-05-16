@@ -2,7 +2,7 @@
 
 ## Iniciació
 
-es una documentació sobre una administració massiva de logs que consta de...
+Aquesta és la documentació sobre una administració massiva de logs que consta de bàsicament tres serveis, aquets són bàsicament el logstash, elasticsearch i el kibana.
 
 
 ## Instalació
@@ -45,5 +45,7 @@ El logstash funcióna simplement amb un file de configuració del filtrat
 ## servei
 
 ## funcionament
+
+Simplement el funcionament del logstash es basa a grans trets en rebre un fitxer per entrada (input). Pot ser un fitxer o qualsevol altre cosa que li entrii (!!!!!!!!!!!!!)  i a partir de aqui fa un filtrat, ja pot ser mostrar, afegir o modificar els elements del qual consten els nostres logs i a partir de aqui envia el procesat per la sortida  (output) que amb el meu cas és un altre servei com elasticsearch però podria simplement ser la sortida per pantalla (stdout).
 
 
