@@ -23,9 +23,9 @@ systemctl enable elasticsearch
 systemctl status elasticsearch
 
 # enllaços directes per les ordres executables
-ln -s /opt/logstash/bin/elasticsearch /bin/elasticsearch
-ln -s /opt/logstash/bin/plugin /bin/plugin_elasticsearch
+ln -s /usr/share/elasticsearch/bin/elasticsearch /bin/elasticsearch
+ln -s /usr/share/elasticsearch/bin/plugin /bin/plugin_elasticsearch
 
 #instalació dels dos plugins
-plugin install mobz/elasticsearch-head 
-plugin install royrusso/elasticsearch-HQ
+plugin_elasticsearch install mobz/elasticsearch-head 
+plugin_elasticsearch install royrusso/elasticsearch-HQ

@@ -21,8 +21,8 @@ systemctl start logstash
 systemctl enable logstash
 systemctl status logstash
 
-ln -s /opt/logstash/bin/logstash /bin/logstash
-ln -s /opt/logstash/bin/plugin /bin/plugin
+ln -s /opt/logstash/bin/logstash-plugin /bin/logstash-plugin
+ln -s /opt/logstash/bin/plugin /bin/plugin_logstash
 
 # provar in situ
 
