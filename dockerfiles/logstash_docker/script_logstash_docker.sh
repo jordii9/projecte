@@ -2,10 +2,10 @@
 
 
 # a partir d'un docker file esta crean una imatge
-docker build -t "docker_imageeXXX" . 
+docker build -t "imatge_logstash" . 
 
 # crear un container a partir d'una iamtge docker
-docker create  --name "logstash_cont" docker_imatge -p logstash
+docker create  --name "logstash_cont" imatge_logstash
 
 
 # enjegar el container

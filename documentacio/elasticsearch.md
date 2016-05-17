@@ -41,16 +41,17 @@ Pero també hi ha index del kibana i d'altres serveis que en el meu cas no són 
 
 L'elasticsearch té nombrosos plugin gràfics per controlar, monitoritzar i manipular
 
-Jo he escollit dos que m'han semlbat més interessants i aportent funcionalitats una mica diferents
+Jo he escollit dos que m'han semlbat més interessants i aportent funcionalitats una mica diferents.
+El plugin creat per elastic-hq que s'accedeix a partir de .... ens ofereix un entorn gràfic que es pot controlar els nombrosos indexs però sobretot l'estat del eslaticsearch a més de si alguna configuració no es correcte o alguna d'elles es pot millorar.
 
-Una delles
-laslte
+L'altre plugin que es pot accedir desde el firefox amb aquesta URI .... ens ofereix la possibilitat de entrar dins de la base de dades elasticsearch i buscar i manegar aquesta base de dades a més de poder controlar els diferents indexs i poder configurar-los.
+
+Per aquest motius m'ha asemblat apropiat utilitzar dues eines gràfiques per l'elasticsearch.
+Tot i aixó també he estat utilitzan la eina desde el terminal curl el qual també ofereix varies opcions.
 
 ## configuracio
 
-file de configuracio
-
-El logstash funcióna simplement amb un file de configuració del filtrat
+La configuració del elastic es basa amb file de configuracio
 
 
 ## servei
