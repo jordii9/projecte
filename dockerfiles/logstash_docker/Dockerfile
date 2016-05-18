@@ -10,7 +10,6 @@ FROM logstash:2.3
 MAINTAINER jordi amela
 
 # Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
-#COPY ../../logstash.conf /etc/logstash/conf.d/logstash.conf
-
-# Puerto para exponer (por defecto: 11211)
-#EXPOSE 11211
+ADD logstash.conf /etc/logstash/conf.d/logstash.conf
+ADD               /var/tmp/
+ADD               /var/tmp/
