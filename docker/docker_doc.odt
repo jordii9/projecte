@@ -1,0 +1,236 @@
+﻿Introducción a creación de imágenes de Memcached
+
+Sobre la base de nuestro conocimiento adquirido en los artículos anteriores de la serie Docker, vamos a profundizar directamente en la construcción de un archivo Dockerfile para tener un Docker construido automáticamente con Memcached instalando imágenes (que se utiliza para ejecutar instancias de Memcached en espacio aislado).
+Recapitulación rápida: ¿Qué son los Dockerfile?
+
+Dockerfiles son scripts que contienen comandos declarados sucesivamente que serán ejecutados, en el orden dado, por Docker para crear automáticamente una nueva imagen Docker. Estos ayudan en gran medida durante los despliegues.
+
+Estos archivos siempre comienzan con la definición de una imagen base utilizando el comando FROM. A partir de ahí, el proceso de construcción se inicia y cada siguiente acción tomada forma finalizando con commits (guardando el estado de imagen) en el host.
+
+Uso:
+
+# Construir una imagen mediante el archivo Dockerfile en la ubicación actual
+# Marcar la imagen final con [nombre] (por ejemplo, *nginx*)
+# Ejemplo: sudo docker build -t [nombre] .
+sudo docker build -t memcached_img .
+
+Nota: Para obtener más información sobre archivos Dockerfiles, echa un vistazo a nuestro artículo: Explicando Docker: El Uso de archivos Dockerfiles para automatizar la creación de imágenes.
+Información general sobre comandos Dockerfile
+Add
+
+Copia un archivo desde el host en el contenedor
+CMD
+
+Configura comandos por defecto para ser ejecutado, o se pasa al punto de entrada ENTRYPOINT
+ENTRYPOINT
+
+Ajusta el punto de entrada por defecto de la aplicación desde el contenedor
+ENV
+
+Inicializa variables de entorno (por ejemplo, "clave=valor")
+EXPOSE
+
+Expone un puerto al exterior
+FROM
+
+Configura la imagen base para usar
+MAINTAINER
+
+Establece los datos de autor/propietario del archivo Dockerfile
+RUN
+
+Ejecuta un comando y cambia (commit) el resultado de la la imagen final (contenedor)
+USER
+
+Establece el usuario para ejecutar los contenedores de la imagen
+VOLUMEN
+
+Monta un directorio desde el host al contenedor
+WORKDIR
+
+Establece el directorio para las directivas de CMD que se ejecutarán
+Creación de un archivo Dockerfile
+
+Dado que los archivos Dockerfile son documentos de texto sin formato, puedes crear uno desde tu editor de texto favorito y escribir los comandos que deseas que Docker ejecute con el fin de construir una imagen. Después de empezar a trabajar en el archivo, continúa con la adición de todo el contenido a continuación (uno tras otro) antes de guardar el resultado final.
+
+Nota: Puedes ver como luce un archivo final de Docker al finalizar esta sección.
+
+Vamos a crear un archivo Dockerfile vacío utilizando el editor de texto nano:
+
+nano Dockerfile
+
+Necesitamos tener todas las instrucciones (comandos) y directivas enumeradas sucesivamente. Sin embargo, todo comienza con la construcción de una imagen base (configurado con el comando FROM).
+
+Vamos a definir el propósito de nuestro archivo Dockerfile y declarar la imagen base para usar:
+
+#############################################################
+# Archivo Dockerfile para ejecutar contenedores en Memcached
+# Basado en una imagen de Ubuntu
+#############################################################
+
+# Establece la imagen de base a utilizar para Ubuntu
+FROM ubuntu
+
+# Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
+MAINTAINER nombre del autor
+
+Después de este bloque inicial de comandos y declaraciones, podemos empezar listando las instrucciones para la instalación de Memcached.
+
+# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
+RUN apt-get update
+
+# Instalar Memcached
+RUN apt-get install -y memcached
+
+Debes establecer el puerto por defecto para ser expuesto al exterior del contenedor:
+
+# Puerto para exponer (por defecto: 11211)
+EXPOSE 11211
+
+Establecer el comando de ejecución por defecto y el punto de entrada (es decir demonio Memcached):
+
+# Comando Memcached por defecto con algunos argumentos
+CMD ["-u", "root", "-m", "128"]
+
+# Establece el usuario para ejecutar el demonio Memcached
+USER daemon
+
+# Establece el punto de entrada para los binarios de Memcached
+ENTRYPOINT memcached
+
+El Dockerfile final
+
+#############################################################
+# Archivo Dockerfile para ejecutar contenedores en Memcached
+# Basado en una imagen de Ubuntu
+#############################################################
+
+# Establece la imagen de base a utilizar para Ubuntu
+FROM ubuntu
+
+# Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
+MAINTAINER nombre del autor
+
+# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
+RUN apt-get update
+
+# Instalar Memcached
+RUN apt-get install -y memcached
+
+# Puerto para exponer (por defecto: 11211)
+EXPOSE 11211
+
+# Comando Memcached por defecto con algunos argumentos
+CMD ["-u", "root", "-m", "128"]
+
+# Establece el usuario para ejecutar el demonio Memcached
+USER daemon
+
+# Establece el punto de entrada para los binarios de Memcached
+ENTRYPOINT memcached
+
+Después de tener todo por escrito dentro del archivo Dockerfile, lo guardas y salimos pulsando CTRL+X seguido por Y.
+
+¡Usando este Dockerfile, estamos listos para empezar a trabajar con contenedores Memcached dockerizados!
+Creación de la imagen Docker para contenedores en Memcached
+
+Ahora podemos crear nuestra primera imagen Memcached siguiendo las instrucciones de uso explicadas en la sección de archivos Dockfile básicos.
+
+Ejecuta el siguiente comando para crear una imagen, etiquetandolo como "memcached_img":
+
+sudo docker build -t memcached_img .
+
+Nota: No olvides el punto . para que Docker pueda encontrar el archivo Dockerfile.
+Correr Contenedores dockerised Memcached
+
+Es muy simple crear cualquier número de instancias memcached perfectamente aislados y autónomos - ahora - gracias a la imagen que hemos obtenido en la sección anterior. Todo lo que tenemos que hacer es crear un nuevo contenedor con docker run.
+Creación de un contenedor instalado en Memcached
+
+Para crear un nuevo contenedor, utiliza el siguiente comando, modificándolo para que se adapte a tus necesidades siguiendo este ejemplo:
+
+# Ejemplo: sudo docker run -name [nombre del contenedor] -p [puerto de acceso: puerto expuesto] -i -t [nombre de imagen memcached]
+sudo docker run -name memcached_ins -d -p 45001:11211 memcached_img
+
+Ahora tendremos un Docker llamado "memcached_ins", accesible desde el puerto 45001, córrelo ()run) utilizando nuestra imagen etiquetada como "memcached img", que hemos construido con anterioridad.
+Limitando la memoria para un contenedor en Memcached
+
+Con el fin de limitar la cantidad de memoria de procesos del contenedor Docker que se puede usar, basta con ejecutar -m [cantidad de memoria] marcando así el límite.
+
+Para ejecutar un contenedor con memoria limitada a 256 MB:
+
+# Ejemplo: sudo docker run -name [nombre] -m [Memory (int)][memory unit (b, k, m or g)] -d (para correr no adjuntar) -p (para configurar el acceso y exponer los puertos) [ID de la imagen]
+sudo docker run -name memcached_ins -m 256m -d -p 45001:11211 memcached_img
+
+Para confirmar el límite de memoria, puedes inspeccionar el contenedor:
+
+# Ejemplo: docker inspect [ID del contenedor] | grep Memory
+sudo docker inspect memcached_ins | grep Memory
+
+Nota: El comando anterior toma la información de la memoria relacionada desde la salida de inspección. Para ver toda la información relevante acerca de tu contenedor, puedes optar por sudo docker inspect [ID del contenedor].
+Prueba del contenedor en Memcached
+
+Hay varias maneras de probar tu contenedor(es) recién creado(s) corriendo en Memcached. Vamos a utilizar una sencilla aplicación cliente en Phyton para esto. Sin embargo, puedes llevarlo a producción con la aplicación utilizando complementos de caché, frameworks o librerías.
+
+Asegúrate de que tu host tiene las librerías necesarias para Python/Memcached:
+
+sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get install -y python-pip
+pip install python-memcached
+
+Vamos a crear un sencillo script de Python llamado "cache.py" usando nano:
+
+nano cache.py
+
+Copiando y pegando el siguiente contenido (explicado por sí mismo) en el interior:
+
+# Importar python-memcache y sys por argumentos
+import memcache
+import sys
+
+# Establece la dirección de acceso para la instancia de Memcached
+addr = 'localhost'
+
+# Toma los numeros de argumentos
+# Formato esperado: python cache.py [puerto memcached] [clave] [valor]
+len_argv = len(sys.argv)
+
+# Al menos el número puerto y una clave debe ser proporcionados
+if len_argv < 3:
+    sys.exit("No hay suficientes argumentos")
+
+# El puerto y la clave son suministrados - ¡Vamos a conectarnos!
+port  = sys.argv[1]
+cache = memcache.Client(["{0}:{1}".format(addr, port)])
+
+# Obtener la Clave
+key   = str(sys.argv[2])
+
+# Si también se proporciona un valor, ajustar para clave-valor
+if len_argv == 4:
+
+    value = str(sys.argv[3])
+    cache.set(key, value)
+
+    print "¡Valor para {0} establecido!".format(key)
+
+# Si no se proporciona un valor, devuelve el valor de la clave:
+
+    value = cache.get(key)
+
+    print "¡Valor para {0} es {1}!".format(key, value)
+
+Presiona CTRL+X y aprueba los cambios con Y para guardar y cerrar.
+
+Para probar una instancia de Docker en memcached mediante el script anterior ejecutamos en el host:
+
+# Ejemplo: python cache.py [puerto] [clave] [valor]
+python cache.py 45001 mi_clave_prueba valor_prueba
+
+# Regresa: Valor para mi_clave_prueba configurado
+
+# Consulta si la clave esta establecida:
+python cache.py 45001 mi_clave_prueba
+
+# Regresa: Valor para mi_clave_prueba es valor_prueba
+
+Para el conjunto completo de instrucciones para instalar y utilizar Docker, revisa la documentación de Docker en docker.io.
