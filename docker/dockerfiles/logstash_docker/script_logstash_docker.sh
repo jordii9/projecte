@@ -9,6 +9,6 @@ docker create  --name "logstash_cont" imatge_logstash
 
 
 # enjegar el container
-docker start logstash_cont
+#docker start logstash_cont
 
 
