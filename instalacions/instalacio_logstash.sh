@@ -15,6 +15,10 @@ EOF
 
 #ficar lo del ordines que comprova si es 22 o 20 per dnf o yum 
 
+MANAGER=yum
+which dnf >/dev/null 2>&1 && MANAGER=dnf
+sudo $MANAGER -y install pandoc texlive
+
 dnf install -y  logstash
 
 
