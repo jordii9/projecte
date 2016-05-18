@@ -9,12 +9,10 @@ FROM elasticsearch:2.3
 # Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
 MAINTAINER jordi amela
 
-# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
-COPY configuració elasticsearch
 
-RUN instalar plugins grafics..
-
-
+RUN ln -s /usr/share/elasticsearch/bin/plugin /bin/plugin
+RUN plugin install mobz/elasticsearch-head 
+RUN plugin install royrusso/elasticsearch-HQ 
 
 # Puerto para exponer (por defecto: 11211)
-#EXPOSE 11211
+EXPOSE 9200
