@@ -10,9 +10,13 @@ FROM fedora:20
 MAINTAINER jordii9
 
 # executar el script
-ADD instalacio_logstash.sh .
-RUN ./instalacio_logstash-sh
+#ADD instalacio_logstash.sh .
+#RUN ./instalacio_logstash-sh
 
 # Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
 ADD logstash.conf /etc/logstash/conf.d/logstash.conf
 ADD logstash-tutorial-dataset /var/tmp/logstash-tutorial-dataset
+
+# Execucio de la ordre per el container i suplantar la ordre base de la imatge oficial
+
+#CMD = ['logstash','-f','/etc/logstash/conf.d/logstash.conf']
