@@ -9,6 +9,6 @@ docker create  --name "elasticsearch_cont" -p 9200:9200 imatge_elasticsearch
 
 
 # enjegar el container
-docker start elasticsearch_cont
+#docker start elasticsearch_cont
 
 

@@ -1,5 +1,7 @@
 #scrip que a partir d'un docker file crea containers
+docker stop logstash_cont 
 
+docker rm logstash_cont >> /dev/null
 
 # a partir d'un docker file esta crean una imatge
 docker build -t "imatge_logstash" . 

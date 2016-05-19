@@ -10,7 +10,7 @@ FROM kibana
 MAINTAINER jordi amela
 
 # Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
-COPY kibana.yml /opt/kibana/config/kibana.yml
+#COPY kibana.yml /opt/kibana/config/kibana.yml
 
 # Puerto para exponer (por defecto: 11211)
 EXPOSE 5601
