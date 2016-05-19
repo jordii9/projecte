@@ -7,7 +7,10 @@ docker rm logstash_cont >> /dev/null
 docker build -t "imatge_logstash" . 
 
 # crear un container a partir d'una iamtge docker
-docker create  --name "logstash_cont" imatge_logstash
+docker create  \
+	--name "logstash_cont" \
+	--link elasticsearch_cont:Elastic \
+	imatge_logstash
 
 
 # enjegar el container
