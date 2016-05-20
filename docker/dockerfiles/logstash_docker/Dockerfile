@@ -17,6 +17,9 @@ MAINTAINER jordii9
 COPY logstash.conf /etc/logstash/conf.d/logstash.conf
 COPY logstash-tutorial-dataset /var/tmp/logstash-tutorial-dataset
 
+#RUN apt-get
+#RUN apt-get -y vim
+
 RUN cp /opt/logstash/bin/logstash-plugin /bin/plugin
 RUN plugin install logstash-filter-elasticsearch
 
