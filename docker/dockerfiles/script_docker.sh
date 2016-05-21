@@ -29,12 +29,12 @@ docker build --tag "imatge_kibana" kibana_docker
 
 docker create \
 	--name "elasticsearch_cont" \
-	--volume "/var/log/:/var/log/" \
 	--publish 9200:9200 \
 	imatge_elasticsearch 
 
 docker create  \
         --name "logstash_cont" \
+	--volume "/var/log:/var/log" \
         --link elasticsearch_cont:Elastic \
         imatge_logstash
 
