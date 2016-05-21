@@ -40,7 +40,6 @@ Aquets contenidors docker es crearàn de manera automatizada a partir dockerfile
 Tot aquest projecte està orientat amb crear els sistemes ja esmentats pero de manera totalment automatizada per poder utilitzar-ho comodament.
 Aquests scripts estàn creats amb python o en bash.
 
-
-![docker](https://3.bp.blogspot.com/-tI8Skq6iX4A/Vy_7_2IeWNI/AAAAAAAAABc/0FXhY1jMF_YSgeZCn65KQCI_kg89QoWJQCLcB/s320/Python.png)
-![python](http://global.download.synology.com/download/pkg_img/Docker/1.9.1-0185/thumb_256.png)
-![bash](https://alejandrocq.files.wordpress.com/2010/08/tip-terminal.png)
+<img src="https://3.bp.blogspot.com/-tI8Skq6iX4A/Vy_7_2IeWNI/AAAAAAAAABc/0FXhY1jMF_YSgeZCn65KQCI_kg89QoWJQCLcB/s320/Python.png" width="110" height="122" hspace="50" />
+<img src="http://global.download.synology.com/download/pkg_img/Docker/1.9.1-0185/thumb_256.png" width="110" height="122" hspace="50" />
+<img src="https://alejandrocq.files.wordpress.com/2010/08/tip-terminal.png" width="110" height="122" hspace="50" />
