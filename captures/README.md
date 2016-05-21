@@ -9,19 +9,21 @@ No és necessari fer cap acció tot i aixó al ser public no hi ha cap mena de p
 
 ## Instruccions
 
-1.  Descarregar el repositori.
+1. Dins d'un terminal Linux al directori escollit.
+
+2.  Descarregar el repositori.
 
 	```
 		$ git clone https://github.com/jordii9/projecte.git
 	```
 	
-2.  Entrar al captures.
+3.  Entrar al captures.
 
 	```
-		$ cd captures
+		$ cd projecte/captures
 	```
 	
-3. Copiar la imatge desitjada a un directori concret.
+4. Copiar la imatge desitjada a un directori concret.
 
 	```
 		$ cp <imatge>  <ruta/nomimatge>

@@ -11,27 +11,29 @@ Tot i aixó pot ser que els archius actuals no siguin la última versió i per a
 
 ## Instruccions
 
-1.  Descarregar el repositori.
+1. Dins d'un terminal Linux al directori escollit.
+
+2.  Descarregar el repositori.
 
 	```
 		$ git clone https://github.com/jordii9/projecte.git
 	```
 	
-2.  Entrar al directori dels repositoris externs.
+3.  Entrar al directori dels repositoris externs.
 
 	```
 		$ cd repos_massive_logs
 	```
 
-3. Un cop dins del directori només ens fa falta descomprimir el fitxer.
+4. Un cop dins del directori només ens fa falta descomprimir el fitxer.
 
-4. Descomprimir el repositori.
+5. Descomprimir el repositori.
     
  	```
  		tar cvxz <repositori.zip>
  	```
 
-5. Un cop descomprimit entrarem al directori base del seu repositori
+6. Un cop descomprimit entrarem al directori base del seu repositori
 
  	```
  		cd <dir_base>

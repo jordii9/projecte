@@ -7,7 +7,9 @@ Per utilitzar aquets scripts és recomanable utilitzar algun dels diferents sist
 
 ## Instruccions
 
-1.  Descarregar el repositori.
+1. Dins d'un terminal Linux al directori escollit.
+
+2.  Descarregar el repositori.
 
 	```
 		$ git clone https://github.com/jordii9/projecte.git
@@ -16,12 +18,12 @@ Per utilitzar aquets scripts és recomanable utilitzar algun dels diferents sist
 2.  Entrar d'instal·lacions.
 
 	```
-		$ cd instalacios
+		$ cd projecte/instalacios
 	```
 	
 3. En aquest punt estem dins del directori instal·lacions del meu repositori.
 
-4. Per instal·lar qualsevol dels serveis amb el script corresponent.
+5. Per instal·lar qualsevol dels serveis amb el script corresponent.
 	Al ser una instal·lació local és mol provable que necesitis permisos d'administrador.
 	
 	- **Logstash:**
