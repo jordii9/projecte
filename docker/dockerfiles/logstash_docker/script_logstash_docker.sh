@@ -1,17 +1,24 @@
-#scrip que a partir d'un docker file crea containers
-docker stop logstash_cont 
+#! /bin/bash
+# Jordi Amela
 
-docker rm logstash_cont >> /dev/null
+# Script que crea un contenidor docker del servei logstash
 
-# a partir d'un docker file esta crean una imatge
-docker build -t "imatge_logstash" . 
 
-# crear un container a partir d'una iamtge docker
+# apagar i borrar containers anteriors
+docker stop logstash_cont 2> /dev/null
+docker rm logstash_cont 2> /dev/null
+
+
+
+# a partir d'un dockerfile esta crean una imatge.
+docker build --tag "imatge_logstash" logstash_docker 
+
+# crear el contenidor docker a partir de la imatge.
 docker create  \
-	--name "logstash_cont" \
-	--link elasticsearch_cont:Elastic \
-	imatge_logstash
-
+        --name "logstash_cont" \
+		--volume "/var/log:/var/log" \
+        --link elasticsearch_cont:Elastic \
+        imatge_logstash
 
 # enjegar el container
 #docker start logstash_cont

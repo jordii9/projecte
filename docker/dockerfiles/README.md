@@ -2,13 +2,20 @@
 
 Aquest és el directori del dockerfile.
 
+En aquest directori hi trobaràs:
+
+- Documentació de com crear un dockerfile.
+
+- Ordres principals del docker per crear aquests containers.
+
+- Ordres de control per comprovar els containers creats.
+
+- Dockerfiles creats per els 3 serveis diferents
+
+- Scripts automatizats per creat  els containers i encendrels de forma ordenada amb les propietats i característiques de casdascun.
 
 
-FALTAAAAA ACABAR!!  
-
-
-
-Tot i aixó dins del directori dockerfile s'explica concretament el funcionament dels dockerfiles i la creació de containers a partir d'aquests.
+(faltaaaa que falta    contenidors alexs de generacio de logs )
 
 ## Instruccions
 
@@ -23,5 +30,24 @@ Tot i aixó dins del directori dockerfile s'explica concretament el funcionament
 3.  Entrar al captures.
 
 	```
-		$ cd projecte/docker
+		$ cd projecte/docker/dockerfiles
+	```
+	
+4. Dins dels directoris següents hi ha els scripts i informació particular de cadascun:
+ 
+	- elasticsearch_docker
+	- kibana_docker
+	- logstash_docker 
+
+
+5. Per executar el script que genera els contenidors docker automaticament
+
+	```
+		$ <sudo> ./script_docker.sh 
+	```
+6. Per executar el script que encenen els contenidors docker automaticament
+
+
+	```
+		$ <sudo> ./start_cont.sh
 	```

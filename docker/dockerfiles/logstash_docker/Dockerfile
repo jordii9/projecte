@@ -1,33 +1,33 @@
 ##############################################################################
-# Dockerfile per executar un logstash
-# Basada en una imatge...
+# Jordi Amela								     #
+# Dockerfile per executar un logstash					     #
+# Basada en una imatge del logstash oficial				     #
 ##############################################################################
 
 # Establir l'imatge per d'inici
+
 FROM logstash:2.3
 
-# Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
-MAINTAINER jordii9
+# Establir autor
 
-# executar el script
-#ADD instalacio_logstash.sh .
-#RUN ./instalacio_logstash-sh
+MAINTAINER jordi Amela
 
-# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
+# Copia del fitxer de configuració del logstash i un fitxer de logs d'exemples
+
 COPY logstash.conf /etc/logstash/conf.d/logstash.conf
 COPY logstash-tutorial-dataset /var/tmp/logstash-tutorial-dataset
 
-#RUN apt-get
-#RUN apt-get -y vim
+# actualització de la imatge i instal·lació del vim 
 
+RUN apt-get
+RUN apt-get -y vim
+
+
+# Instal·lacio del plugin elasticsearh
+#
 RUN cp /opt/logstash/bin/logstash-plugin /bin/plugin
 RUN plugin install logstash-filter-elasticsearch
 
 # Execucio de la ordre per el container i suplantar la ordre base de la imatge oficial
-
-#COPY docker-entrypoint.sh /
-
-#ENTRYPOINT ["/docker-entrypoint.sh"]
-
 
 CMD ["logstash","agent", "-f", "/etc/logstash/conf.d/logstash.conf"]

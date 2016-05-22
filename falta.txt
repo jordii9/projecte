@@ -1,6 +1,3 @@
-falta guies d'usuari
-falta documentacio docker i dockerfile
-falta funcionament automatic logstash docker
-falta docker compose o shet joan
-falta si hi ha temps zabbiz i naggios
-falta presentacio
+falta corregir faltes
+falta script pandoc
+fatla presentacio

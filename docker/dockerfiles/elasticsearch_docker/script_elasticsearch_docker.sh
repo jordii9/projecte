@@ -1,5 +1,12 @@
-#scrip que a partir d'un docker file crea containers
+#! /bin/bash
+# Jordi Amela
 
+# Script que crea un contenidor docker del servei elasticsearch
+
+# apagar i borrar containers anteriors
+
+docker stop elasticsearch_cont 2> /dev/null
+docker rm elasticsearch_cont 2> /dev/null
 
 # a partir d'un docker file esta crean una imatge
 docker build --tag "imatge_elasticsearch" . 
