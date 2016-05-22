@@ -1,7 +1,14 @@
+#! /bin/sh
+# Jordi Amela
 # script que encen tots els dockers
 
+# Apagar els serveis en el host local per desocupar els ports
 
- # ojo que el logstash esta linkat amb elastic i petara si s'enjega abanns
+systemctl stop logstash
+systemctl stop elasticsearch
+systemctl stop kibana
+
+# ojo que el logstash esta linkat amb elastic i petara si s'enjega abanns
 
 docker start elasticsearch_cont
 
