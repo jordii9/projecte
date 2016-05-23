@@ -19,14 +19,17 @@ COPY logstash-tutorial-dataset /var/tmp/logstash-tutorial-dataset
 
 # actualització de la imatge i instal·lació del vim 
 
-RUN apt-get
-RUN apt-get -y vim
-
+#RUN apt-get
+#RUN apt-get vim
 
 # Instal·lacio del plugin elasticsearh
-#
+
 RUN cp /opt/logstash/bin/logstash-plugin /bin/plugin
 RUN plugin install logstash-filter-elasticsearch
+
+# Creació de permisos per tothom per poder llegir els fitxers de logs.
+RUN chmod -R o+r /var/log
+RUN chmod -R o+r /var/tmp   
 
 # Execucio de la ordre per el container i suplantar la ordre base de la imatge oficial
 

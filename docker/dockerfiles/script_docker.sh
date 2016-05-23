@@ -1,8 +1,11 @@
-####################################################
-#                                                  #
-#                                                  #
-####################################################
+#! /bin/bash
+# Jordi Amela
 
+#Encendre el docker per si no esta ences                                                  
+
+systemctl start docker            
+
+                                      
 # Apaga i borra els containers ja existens (si hi són!).
 
 docker stop logstash_cont 2> /dev/null
@@ -34,7 +37,8 @@ docker create \
 
 docker create  \
         --name "logstash_cont" \
-	--volume "/var/log:/var/log" \
+	--volume /var/log:/var/log \
+	--volume /var/tmp:/var/tmp \
         --link elasticsearch_cont:Elastic \
         imatge_logstash
 
