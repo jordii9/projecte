@@ -16,7 +16,7 @@ Tot i aixó dins del directori dockerfile s'explica concretament el funcionament
 		$ git clone https://github.com/jordii9/projecte.git
 	```
 	
-3.  Entrar al captures.
+3.  Entrar directori principal del docker.
 
 	```
 		$ cd projecte/docker
