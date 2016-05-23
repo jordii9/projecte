@@ -1,4 +1,5 @@
-# Guia d'usuari
+# Dockerfile kibana
+## Guia d'usuari
 
 Aquest és el directori del kibana de docker, tot i que el directori pare té el script global per el funcionament complert aquí està de forma individualitzada i conté els fitxers de configuració necessaris per la creació de la imatge. 
 També hi ha Obviament el Dockerfile pero també té el fitxer de configuració a més d'un fitxer de logs d'exemple.

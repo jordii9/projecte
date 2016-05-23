@@ -1,3 +1,4 @@
+# Instal·lació
 # Guia d'usuari
 
 En aquest directori hi han els procesos d'instalació de forma local dels diferents serveis utilitzats en aquest projecte, és a dir, instalats directament al sistema operatiu.

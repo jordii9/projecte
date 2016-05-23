@@ -1,3 +1,4 @@
+# Docker elasticsearch
 # Guia d'usuari
 
 Aquest és el directori del elasticsearch de docker, tot i que el directori pare té el script global per el funcionament complert aquí està de forma individualitzada i conté els fitxers de configuració necessaris per la creació de la imatge. 
@@ -13,7 +14,7 @@ També hi ha Obviament el Dockerfile pero també té el fitxer de configuració 
 		$ git clone https://github.com/jordii9/projecte.git
 	```
 	
-3.  Entrar al directori del kibana.
+3.  Entrar al directori del elasticsearch.
 
 	```
 		$ cd projecte/docker/dockerfiles/elasticsearch_docker

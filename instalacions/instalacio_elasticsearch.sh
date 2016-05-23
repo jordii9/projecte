@@ -1,9 +1,15 @@
 #! /bin/sh
-#instalacio del logstash
-# S'ha de crear un repositori per poder baixar-ho de la pagina oficial
+
+# Jordi Amela
+
+#instalacio del elasticsearch
+
 # Aquest script s'ha de fer com a administrador
+
+# Importació de la pàgina oficial
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
+# Creació del repsitori
 cat  << EOF  > /etc/yum.repos.d/elasticsearch.repo
 [elasticsearch-2.x]
 name=Elasticsearch repository for 2.x packages
@@ -13,10 +19,11 @@ gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 EOF
 
-#ficar lo del ordines que comprova si es 22 o 20 per dnf o yum 
+#Instal·lació del elasticsearch
 
-
-dnf install -y  elasticsearch
+MANAGER=yum
+which dnf >/dev/null 2>&1 && MANAGER=dnf
+sudo $MANAGER -y install elasticsearch
 
 systemctl start elasticsearch
 systemctl enable elasticsearch
@@ -26,6 +33,12 @@ systemctl status elasticsearch
 ln -s /usr/share/elasticsearch/bin/elasticsearch /bin/elasticsearch
 ln -s /usr/share/elasticsearch/bin/plugin /bin/plugin_elasticsearch
 
-#instalació dels dos plugins
+#instal·lació dels dos plugins
 plugin_elasticsearch install mobz/elasticsearch-head 
 plugin_elasticsearch install royrusso/elasticsearch-HQ
+
+# Encendre el servei elasticsearch
+systemctl start elasticsearch
+systemctl enable elasticsearch
+systemctl status elasticsearch
+

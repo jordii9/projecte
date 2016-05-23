@@ -1,9 +1,15 @@
-#! /bin/sh
+#! /bin/bash
+
+# Jordi Amela
 #instalacio del logstash
-# S'ha de crear un repositori per poder baixar-ho de la pagina oficial
+
 # Aquest script s'ha de fer com a administrador
+
+# Importar la pagina oficial de elastic
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
+
+# Fepositori de descarrega
 cat  << EOF  > /etc/yum.repos.d/logstash.repo
 [logstash-2.3]
 name=Logstash repository for 2.3.x packages
@@ -13,7 +19,7 @@ gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 EOF
 
-#ficar lo del ordines que comprova si es 22 o 20 per dnf o yum 
+#Instal·lació del logstash
 
 MANAGER=yum
 which dnf >/dev/null 2>&1 && MANAGER=dnf

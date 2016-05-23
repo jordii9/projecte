@@ -1,4 +1,5 @@
-# Guia d'usuari
+# Dockerfile
+## Guia d'usuari
 
 Aquest és el directori del dockerfile.
 
@@ -10,12 +11,10 @@ En aquest directori hi trobaràs:
 
 - Ordres de control per comprovar els containers creats.
 
-- Dockerfiles creats per els 3 serveis diferents
+- Dockerfiles creats per els 3 serveis diferents.
 
-- Scripts automatizats per creat  els containers i encendrels de forma ordenada amb les propietats i característiques de casdascun.
+- Scripts automatizats per creat  els containers i encendrels de forma ordenada amb les propietats i característiques de casdaun.
 
-
-(faltaaaa que falta    contenidors alexs de generacio de logs )
 
 ## Instruccions
 

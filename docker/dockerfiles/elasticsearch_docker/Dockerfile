@@ -1,18 +1,17 @@
-##############################################################################
-# Dockerfile per executar un logstash
-# Basada en una imatge...
-##############################################################################
+# Dockerfile d'elasticsearch
 
-# Establece la imagen de base a utilizar para Ubuntu
+# S'estableix la imatge d'inici oficial elasticsearch
 FROM elasticsearch:2.3
 
-# Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
+# Defineix el autor
 MAINTAINER jordi amela
 
-
+# Es crea un linc simbolik per poder executar la ordre
 RUN ln -s /usr/share/elasticsearch/bin/plugin /bin/plugin
+
+# s'instal·len els plugins
 RUN plugin install mobz/elasticsearch-head 
 RUN plugin install royrusso/elasticsearch-HQ 
 
-# Puerto para exponer (por defecto: 11211)
+# S'obra el port per defecte d'elasticsearch
 EXPOSE 9200

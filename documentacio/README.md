@@ -1,4 +1,5 @@
-# Guia d'usuari
+# Documentació
+## Guia d'usuari
 
 Aquest directori conté de manera datallada tota la documentació referent a cada servei d'aquest projecte.
 Aquets serveis són els següents:

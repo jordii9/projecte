@@ -24,23 +24,23 @@ La manera d'instal·lar aquests plugins són:
 
 Tot aixó està de manera automatizada dins del meu script que crea automaticament tots els elements necessaris per que el logstash funcioni.
 
-## idea del logstash (cambiar nom)
+## L'idea del logstash
 
 Logstash és un servidor el qual és basa en tres elements:
 
-- Input : La entrada , és a dir, el fluxe que rep aquest servei que normalment és un fitxer
+- Input : La entrada , és a dir, el fluxe que rep aquest servei que normalment és un fitxer.
 - Output : La sortida que trasmet aquest servei , ja pots ser que s'envi en un altre servidor , com és el cas del elasticsearch o simplement crear un fitxer , enviar-te un correu o bé la stdout (sortida standard)
 - Filter : El el processat de l'input que el pot convertir o simplement afegir nous atributs o més.
 
 Cada un d'aquests tres elements consta dels anomenats plugins, els quals són les ordres o peticions concretes que es duen a terme a cada un d'ells, a més de que té moltissimes possibilitats i moltes utilitats diferent.
 
 Els plugins siguin del tipus que siguin, cada un d'ells té característiques els quals es poden afegir i configurar al seu gust.
-L'unic que cal tenir en compte dels seus atributs és que n'hi ha alguns d'obligatoris i que no poden funcionar sense aquests. També cal dir que cada caràcteristica sigui o no sigui sol tenir uns valors per defecte que cal tenir sempre en compte.
+L'únic que cal tenir en compte dels seus atributs és que n'hi ha alguns d'obligatoris i que no poden funcionar sense aquests. També cal dir que cada caràcteristica sigui o no sigui sol tenir uns valors per defecte que cal tenir sempre en compte.
 
 
-## configuració
+## Configuració
 
-La configuració del logstash és mol simple, ja que té un únic fitxer de configuració el qual no existeix per que es té que crear 
+La configuració del logstash és mol simple, ja que té un únic fitxer de configuració el qual no existeix per que es té que crear.
 
 El logstash funcióna simplement amb un fitxer de configuració que determina el input i el output i sobretot el procesat que volem fer amb cada un dels elements que entra.
 
@@ -48,12 +48,13 @@ Aquest fitxer de configuració és el que està en **/etc/logstash/conf.d/logsta
 
 La manera manual (per així dir-ho ) de executar el logstash és la seguent.
 
-logstash -f /etc/logstash/conf.d/logstash.conf
+**logstash -f /etc/logstash/conf.d/logstash.conf**
 
 D'aquesta manera ens assegurem que el logstash fagi el seu processat i si a sobre el tenim configurat per que a més de enviar-ho al elasticsearch ho faci també per *stdout* ens sortirà amb el format desitjat per pantalla.
 
 Abans de tot aixó és indicat provar el fitxer de configuració per identificar algun error de sintaxis:
-logstash -f /etc/logstash/conf.d/logstash.conf
+
+**logstash -t /etc/logstash/conf.d/logstash.conf**
 
 A més cal tenir en compte els possibles problemes de permisos que al script també estàn contemplats.
 

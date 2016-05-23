@@ -1,4 +1,6 @@
-# Guia d'usuari
+# Logs d'exemple
+
+## Guia d'usuari
 
 En aquest directori hi han logs d'exemple els quals s'han utilitzat per utilitzar les versions de prova del projecte.
 
@@ -14,7 +16,7 @@ Si es volgues copiar algun log.
 		$ git clone https://github.com/jordii9/projecte.git
 	```
 	
-3.  Entrar al captures.
+3.  Entrar al directori de exemple de logs.
 
 	```
 		$ cd projecte/logs-exemple

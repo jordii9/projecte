@@ -1,4 +1,5 @@
 # Dockerfile
+## Documentació
 
 Els Dockerfiles són scripts que contenen comandes que posteriorment seràn executades amb l'ordre concret del fitxer,
 aquesta és una eina bàsica de docker per crear imatges de manera automatitzada i més eficient.
@@ -104,12 +105,12 @@ Un cop es té la imatge docker s'ha de crear el contenidor:
 	
 Aquesta commanda és la comanda simple a més podríem:
 
-- Mapejar ports (unió màquina i contenidor) --publishe
+- Mapejar ports (unió màquina i contenidor) --publish
 - linkar un o més contenidors  --link
 - montar un directori --volume
 - I altres opcions com crear un container interactiu...
 
-I finalment només caldria encendre'l:
+I finalment només cal encendre'l:
 
 
 **$ sudo docker start <nom_container>**

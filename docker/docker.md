@@ -3,7 +3,7 @@
 ## Documentació bàsica
 
 El docker és una tecnologia que a dia de avui s'esta imposant i sutilitza cada dia més.
-I simplement consisteix en a partir d'una imatge, sigui la que sigui, la idea és que funcioni independentment del host o màquina i pugi funcionar sense cap tipus de problema de compatibilitat, sense necessitat d'instalació de serveis dins del host i amb total comoditat.
+I simplement consisteix que a partir d'una imatge, sigui la que sigui, la idea és que funcioni independentment del host o màquina i pugi funcionar sense cap tipus de problema de compatibilitat, sense necessitat d'instalació de serveis dins del host i amb total comoditat.
 
 Aquestes imatges s'injecten per així dir-ho dins d'un contenidor que permet encendre'l i manipular-lo.
 

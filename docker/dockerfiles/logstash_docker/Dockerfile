@@ -1,8 +1,6 @@
-##############################################################################
-# Jordi Amela								     #
-# Dockerfile per executar un logstash					     #
-# Basada en una imatge del logstash oficial				     #
-##############################################################################
+# Jordi Amela								     
+# Dockerfile per executar un logstash					     
+# Basada en una imatge del logstash oficial				     
 
 # Establir l'imatge per d'inici
 

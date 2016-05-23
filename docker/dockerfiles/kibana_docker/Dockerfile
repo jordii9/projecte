@@ -1,17 +1,15 @@
-##############################################################################
-# Dockerfile per executar un logstash
-# Basada en una imatge...
-##############################################################################
+# Dockerfile kibana
+#Jordi Amela
 
-# Establece la imagen de base a utilizar para Ubuntu
+# S'estableix la imatge font del kibana oficial
 FROM kibana
 
-# Establece el autor (maintainer) del archivo (tu nombre - el autor del archivo)
+# Es defineix el autor
 MAINTAINER jordi amela
 
-# Actualización de la lista de fuentes del repositorio de aplicaciones por defecto
+# Es copia el fitxer de configuració del kibana
 COPY kibana.yml /opt/kibana/config/kibana.yml
 
-# Puerto para exponer (por defecto: 11211)
+# S'obra el port per defecte que utilitza el kibana
 EXPOSE 5601
 

@@ -1,4 +1,5 @@
-# Guia d'usuari
+# Dockerfile logstash
+## Guia d'usuari
 
 Aquest és el directori del logstash de docker, tot i que el directori pare té el script global per el funcionament complert aquí està de forma individualitzada i conté els fitxers de configuració necessaris per la creació de la imatge. 
 Conté primerament un script docker-entrypoint.sh que actualment al dockerfile no s'executarà però podría necessitar-se i per aixó està localment.
