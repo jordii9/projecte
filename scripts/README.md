@@ -31,6 +31,10 @@ Aquest és el manual per utilitzar correctament aquests scripts.
   
 ## Pandoc
 
+## Instal·lació
+
+**dnf/yum install -y pandoc texlive**
+
 És una eina mol eficaç de conversió de formats i creació també de presentacions.
 Desde el llenguatge markdown és capaç de transformar-ho a html o fins i tot a pdf.
  
