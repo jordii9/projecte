@@ -11,6 +11,26 @@ Jordi Amela
 
 ![imatge][.images/elk2.png]
 
+----
+
+# Logstash
+
+
+---
+
+# Elasticsearch
+
+---
+
+# kibana
+
+---
+
+# Docker
+
+---
+
+# Dockerfile
 
 ---
 # Propietats
@@ -38,3 +58,9 @@ dakls
 asdfñ ,m a
 dfl kñal
 
+
+# Problemes principals
+
+# Eines gràfiques
+
+#
