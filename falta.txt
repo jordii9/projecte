@@ -1,4 +1,0 @@
-falta corregir faltes
-falta curl
-falta script pandoc
-fatla presentacio
