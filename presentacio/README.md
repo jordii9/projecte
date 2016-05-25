@@ -1,5 +1,28 @@
-# Presentació
-# Guia d'usuari
+# Presentacio
 
-Aquest és el directori principal de la presentació.
-Aquí només hi ha la presentació en format markdown per generar la presentació amb un script i poder-la obrir és necessari el repositori presentació.
+## Guia d'usuari
+
+Aquest és el directori de la presentació
+
+## Instruccions
+
+1. Dins d'un terminal Linux al directori escollit.
+
+2. Descarregar el repositori.
+
+	```
+		$ git clone https://github.com/jordii9/projecte.git
+	```
+	
+3.  Entrar al directori presentació.
+
+	```
+		$ cd projecte/presentacio
+	```
+	
+
+4. Per executar el script que genera la presentació automaticament
+
+	```
+		$ ./script_presentacio.sh
+	```
